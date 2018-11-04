@@ -560,10 +560,6 @@ function genterate_page_title(){
 		$target = 'Itemwise Stock Report';
 		}else if($uri == 'item_consump_rep.php'){
 		$target = 'Itemwise Consumption Report';
-		}else if($uri == 'notice.php'){
-		$target = 'Notice';
-		}else if($uri == 'complain.php'){
-		$target = 'Message';
 		}else if($uri == 'search_result.php'){
 		$target = 'Search';
 		}else if($uri == 'passforgot.php'){

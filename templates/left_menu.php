@@ -167,10 +167,6 @@ if($usr[0]->group_id == '3'){
 				</li>
 			</ul>
 		</li>
-		
-		<li  <?php if($curr_page == 'notice.php') echo 'class="active_menu"';?>>
-			<a href="notice.php"><?php echo NOTICE_MANAGEMENT; ?></a>
-		</li>
 		<?php }else if($usr[0]->group_id == '3'){ ?>
 		<li <?php if($curr_page == 'form.php') echo 'class="active_menu"';?>>
 			<a href="<?php echo $add_cond;?>" class="form" rel="form"><?php echo ADMISSION_FORM; ?></a>
@@ -196,12 +192,7 @@ if($usr[0]->group_id == '3'){
 			<a href="meal_order_view.php" class="meal_order_view" rel="meal_order_view"><?php echo MEAL_ORDER_VIEW; ?></a>
 		</li>
 		<?php }//elseif 
-			if($usr[0]->group_id != '2'){ ?>
-		<li <?php if($curr_page == 'complain.php') echo 'class="active_menu"';?>>
-			<a href="complain.php" class="complain" rel="complain"><?php echo COMPLAIN; ?></a>
-		</li>
-		
-		<?php }//if
+			
 		if($usr[0]->group_id == '3'){ ?>
 			<li <?php if($curr_page == 'change_pass.php') echo 'class="active_menu"';?>>
 				<a href="change_pass.php" class="change_pass" rel="change_pass"><?php echo CHANGE_PASS; ?></a>
@@ -213,22 +204,4 @@ if($usr[0]->group_id == '3'){
 		
 	<h3 id="bottom">&nbsp;</h3>
 	
-	<?php 
-		$sql = "select * from ".DB_PREFIX."notice order by created_datetime desc LIMIT 5";
-		$noticeList = $dbObj->selectDataObj($sql);
-	if(!empty($noticeList))	{	
-	?>
-	<h3 id="notice_top">&nbsp;</h3>
-	<ul id="notice">
-	<?php foreach($noticeList as $notc){ ?>
-		<li>
-			<p class="date"><span class="notice_date"><?php echo dateConvertion($notc->issue_date).'</br>'; ?></span></p>
-			<p class="description"><?php echo $notc->subject.'<br />'; ?></p>
-			<a class="notice_details" href="notice_details.php?action=detail&id=<?php echo $notc->id; ?>"><?php echo VIEW_DETAILS; ?></a>
-			
-		</li>
-	<?php }//foreach ?>
-	</ul>
-	<h3 id="notice_bottom">&nbsp;</h3>
-	<?php }?>	
 </div>

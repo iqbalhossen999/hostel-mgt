@@ -2,8 +2,6 @@
 /*Define Menu Variable*/
 define('MAIN_MENU', 'Main Menu');
 define('LOG_OUT','Logout');
-define('POWERED','Powered by <a href="http://www.grameensolutions.com/" target="_blank">Grameen Solutions Ltd</a>');
-define('COPYRIGHT','Copyright &copy; '.date("Y").' <a href="http://www.bup.edu.bd/" target="_blank">Bangladesh University of Professionals (BUP)</a>');
 define('USER_GROUP_MANAGEMENT', 'User Group Management');
 define('BRANCH_MANAGEMENT', 'Branch Management');
 define('HALL', 'Hall');
@@ -217,7 +215,7 @@ define('NOT_SELECTED', '---');
 
 //User Home Configuration
 define('LOG_IN', 'Login');
-define('BUP_HALL', 'Bup Hall');
+define('HALL_X', 'Hall X');
 define('HALL_OVERVIEW', 'Hall Overview');
 define('ABOUT_US', 'About Us');
 define('CONTACT_US', 'Contact us');
@@ -243,7 +241,7 @@ define('ASST_PROVOST_SIGNATURE', 'Asst Provost Signature');
 define('PROVOST_SIGNATURE', 'Provost Signature');
 define('LOCAL_GUARDIAN', 'LOCAL GUARDIAN');
 define('BANGLADESH_UNIVERSITY_OF_PROFESSIONALS', 'BANGLADESH UNIVERSITY OF PROFESSIONALS');
-define('BUP_STUDENTS_HALL', 'BUP STUDENTS HALL');
+define('x_STUDENTS_HALL', 'STUDENTS HALL X');
 define('MALEFEMALE', '(Male/Female)');
 define('SELECT_DATE', 'Select Date');
 define('GUARDIAN_PHOTO', 'Guardian Photo');
@@ -284,8 +282,8 @@ define('IMAGE_FOUR', 'Image 4');
 define('IMAGE_FIVE', 'Image 5');
 
 //dashboard page
-define('DASHBORD_DESCRIPTION', 'Establishment of a university for the armed forces educational and training institutes was a long felt need. To keep pace and to be at par with the fast developing world, the national higher studies, research enabling modern knowledge and creating scope for education and studies are the obligations to be fulfilled. In order to expand and integrate the existing educational and training institutes of the armed forces, they were needed to be brought under a single umbrella or authority. Thereby, the establishment of "Bangladesh University of Professionals," (BUP) took place in that process and came in to being as 30th public university of Bangladesh on 05 June 2008. ');
-define('DASHBORD_DESCRIPTION2', 'BUP have 2 residential hall 1 Female Hall and 1 Male Hall.  Both halls started functioning in the year 2010 after the establishment of Bangladesh University of Professionals in the year 2008. Both halls were recognized from the month of 10th April 2010. Lt Col Md.Farid Alam, Bangladesh University of Professionals was first Provost of this Hall. Enforce the policies and procedures of the BUP Female Hall. Ensure the safety and security of residents. Monitor and report the daily activities and ensure accountability of all program residents. Perform all shift tasks as assigned. Ensure proper maintenance and cleanliness of the facility. ');
+define('DASHBORD_DESCRIPTION', 'Hostel Management System for univesities.');
+define('DASHBORD_DESCRIPTION2', 'Hostel Management System for univesities.');
 define('DASHBORD', 'Dashbord');
 define('MEAL_CONFIGURATION', 'Meal Configuration');
 define('STUDENT_INFORMATION', 'Student Informations');
@@ -435,12 +433,12 @@ define('MESSAGE_NO', 'Message No');
 define('PRICE', 'Price');
 define('TOTAL_QUANTITY', 'Total Quantity');
 define('STUDENT_MESS_BILL_REPORT', 'Student Mess Bill');
-define('BUP_HALL','BUP HALL'); 
-define('BUP_FEMALE_HALL','BUP Female Hall'); 
-define('BUP_FEMALE_HALL_DESCRIPTION','BUP Female Hall of the first Women’s residential hall started functioning with twelve girl students in the year 2010 after the establishment of Bangladesh University of Professionals in the year 2008. This women Hall was recognized as Women Hall from the month of 10th April 2010. Lt Col Md.Farid Alam, Bangladesh University of Professionals was first Provost of this Hall. Enforce the policies and procedures of the BUP Female Hall. Ensure the safety and security of residents. Monitor and report the daily activities and ensure accountability of all program residents. Perform all shift tasks as assigned. Ensure proper maintenance and cleanliness of the facility.'); 
-define('BUP_FEMALE_HALL_FORMAL_PROVOSTS','Former Provosts '); 
-define('BUP_MALE_HALL','BUP Male Hall'); 
-define('BUP_MALE_HALL_DESCRIPTION','BUP Male Hall of the first Male residential hall started functioning with 25 students in the year 2010 after the establishment of Bangladesh University of Professionals in the year 2008. This Hall was recognized as Male Hall from the month of 10th April 2010. Lt Col Md.Farid Alam, Bangladesh University of Professionals was first Provost of this Hall. Enforce the policies and procedures of the BUP Male Hall. Ensure the safety and security of residents. Monitor and report the daily activities and ensure accountability of all program residents. Perform all shift tasks as assigned. Ensure proper maintenance and cleanliness of the facility.');
+define('x_HALL','HALL X'); 
+define('x_FEMALE_HALL','Hall X for females'); 
+define('x_FEMALE_HALL_DESCRIPTION','Hall X for females'); 
+define('x_FEMALE_HALL_FORMAL_PROVOSTS','Former Provosts '); 
+define('x_MALE_HALL','BUP Male Hall'); 
+define('x_MALE_HALL_DESCRIPTION','');
 define('TIME_SETUP','Time Setup');
 define('MEAL_NAME','Meal Name');
 define('MEAL_TIME','Meal Time');

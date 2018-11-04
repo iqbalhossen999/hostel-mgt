@@ -39,17 +39,8 @@ require_once("templates/left_menu.php");
 		
 	});
 	</script>
-		<div class="border_box">
-			<div class="box_skitter box_skitter_large">
-				<ul>
-					<li><a href="#cube"><img src="images/slider/001.jpg" class="cube" /></a><div class="label_text"></div></li>
-					<li><a href="#cubeRandom"><img src="images/slider/002.jpg" class="cubeRandom" /></a><div class="label_text"></div></li>
-					<li><a href="#block"><img src="images/slider/003.jpg" class="block" /></a><div class="label_text"></div></li>
-				</ul>
-			</div>
-		</div>
 		<div id="main_container">
-			<div id="dashbord"><?php echo BUP_HALL; ?></div>
+			<div id="dashbord"><?php echo HALL_X; ?></div>
 			<div id="description_home">
 				<p class="paragraph"><?php echo DASHBORD_DESCRIPTION; echo $usr; ?></p>
 				<br />
