@@ -301,17 +301,12 @@ if($cur_user_group_id == '3' && $status == '1'){
 	<table width="100%" cellspacing="0" cellpadding="0" border="0" class="module_header">
 		<tr>
 			<td align="center">
-				<img src="images/logo.jpg" title="Bup Hostel Management" />
+				<h1><?php echo IIUC; ?></h1>
 			</td>
 		</tr>
 		<tr>
 			<td align="center">
-				<h1><?php echo BANGLADESH_UNIVERSITY_OF_PROFESSIONALS; ?></h1>
-			</td>
-		</tr>
-		<tr>
-			<td align="center">
-				<h2><?php echo BUP_STUDENTS_HALL; ?></h2>
+				<h2><?php echo IIUC_student_hall; ?></h2>
 			</td>
 		</tr>
 		<tr>

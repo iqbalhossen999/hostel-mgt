@@ -42,7 +42,8 @@ div#main_body_wrapper{
 	width:100%;
 	height:100%;
 	padding-bottom:52px;
-	background:url("../images/bg_top.gif") top left repeat-x;
+	/* background:url("../images/bg_top.gif") top left repeat-x; */
+	background: #efefef;
 }
 
 a, a:link, a:visited{
@@ -114,7 +115,7 @@ h1{
 	height:98px;
 	float:left;
 	clear:right;
-	margin-left:10px;
+	margin-left:-48px;
 }
 
 #logo_container{

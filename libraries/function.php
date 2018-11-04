@@ -568,7 +568,7 @@ function genterate_page_title(){
 		$target = 'Password Reset';
 		}
 	
-	$target = 'BUP Hall &raquo; '.$target;
+	$target = 'IIUC Hall &raquo; '.$target;
 	return $target;
 }//function
 

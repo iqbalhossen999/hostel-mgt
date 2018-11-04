@@ -52,17 +52,6 @@
 	<link href="css/grey.css" rel="stylesheet" type="text/css" />
 	<!-- Pagination::End-->
 	
-	<!-- Slider::Start-->
-	<link href="css/slider/skitter.styles.css" type="text/css" media="all" rel="stylesheet" />
-	<link href="css/slider/sexy-bookmarks-style.css" type="text/css" media="all" rel="stylesheet" />
-	
-	<script src="js/slider/jquery.easing.1.3.js"></script>
-	<script src="js/slider/jquery.animate-colors-min.js"></script>
-	<script src="js/slider/jquery.skitter.min.js"></script>
-	<script src="js/slider/highlight.js"></script>
-	<script src="js/slider/sexy-bookmarks-public.js"></script>
-	<!-- Slider::End-->
-	
 </head>
 
 <body id="wrapper_container">

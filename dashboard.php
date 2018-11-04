@@ -40,12 +40,6 @@ require_once("templates/left_menu.php");
 	});
 	</script>
 		<div id="main_container">
-			<div id="dashbord"><?php echo HALL_X; ?></div>
-			<div id="description_home">
-				<p class="paragraph"><?php echo DASHBORD_DESCRIPTION; echo $usr; ?></p>
-				<br />
-				<p class="paragraph"><?php echo DASHBORD_DESCRIPTION2; echo $usr?></p> 
-			</div>
 			<?php if($usr[0]->group_id == '1'){ ?>
 			<div id="icon_set">
 				<!--image gellary-->

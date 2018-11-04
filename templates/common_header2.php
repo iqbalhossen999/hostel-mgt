@@ -6,7 +6,6 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<link rel="stylesheet" href="css/template.css" type="text/css" />
 	<link rel="stylesheet" href="css/style.css" type="text/css" />
-	<link rel="shortcut icon" href="images/favicon.ico">
 	<title> <?php echo genterate_page_title();?> </title>
 	
 	

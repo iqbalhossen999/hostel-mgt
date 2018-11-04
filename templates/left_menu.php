@@ -24,31 +24,9 @@ if($usr[0]->group_id == '3'){
 			<li <?php if($curr_page == 'dashboard.php') echo 'class="active_menu"';?>>
 				<a href="dashboard.php" class="dashboard" rel="dashboard"><?php echo HOME; ?></a>
 			</li>
-			<li <?php if($curr_page == 'hall_rules.php') echo 'class="active_menu"';?>>
-				<a href="hall_rules.php" class="hall_rules" rel="hall_rules"><?php echo HALL_RULES; ?></a>
-			</li>
-			
-			<li <?php if($curr_page == 'student_login.php' || $curr_page == 'male_hall.php' || $curr_page == 'female_hall.php') echo 'class="active_menu"';?>>
-				<a href="#" class="appendix" rel="appendix"><?php echo HALL_OVERVIEW; ?></a>
-				<ul>
-					<li <?php if($curr_page == 'male_hall.php') echo 'class="active_menu"';?>>
-						<a href="male_hall.php" class="hall" rel="male hall"><?php echo MALE_HALL ;?></a>
-					</li>
-					
-					<li <?php if($curr_page == 'female_hall.php') echo 'class="active_menu"';?>>
-						<a href="female_hall.php" class="hall" rel="female hall"><?php echo FEMALE_HALL ;?></a>
-					</li>
-				</ul>
-			</li>
 			
 			<li <?php if($curr_page == 'prebooking.php') echo 'class="active_menu"';?>>
 				<a href="prebooking.php" class="prebooking" rel="prebooking"><?php echo PREBOOKING; ?></a>
-			</li>
-			<li <?php if($curr_page == 'about_us.php') echo 'class="active_menu"';?>>
-				<a href="about_us.php" class="appendix" rel="appendix"><?php echo ABOUT_US; ?></a>
-			</li>
-			<li <?php if($curr_page == 'contact.php') echo 'class="active_menu"';?>>
-				<a href="contact.php" class="appendix" rel="appendix"><?php echo CONTACT_US; ?></a>
 			</li>
 		<?php }else{ 
 			if($usr[0]->group_id == '1'){
@@ -63,7 +41,7 @@ if($usr[0]->group_id == '3'){
 					<a href="patern.php" class="patern" rel="patern"><?php echo ROOM_CATEGORY; ?></a>
 				</li>
 				<li <?php if($curr_page == 'session.php') echo 'class="active_menu"';?>>
-					<a href="session.php" class="session" rel="session"><?php echo SESSION_MANAGEMENT; ?></a>
+					<a href="session.php" class="session" rel="session">Session</a>
 				</li>
 				<li <?php if($curr_page == 'user.php') echo 'class="active_menu"';?>>
 					<a href="user.php" class="user" rel="user"><?php echo USER_MANAGEMENT; ?></a>
