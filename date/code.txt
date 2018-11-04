@@ -1,0 +1,22 @@
+<input type="text" id="date_of_birth" name="date_of_birth" readonly="readonly" value="<?php echo $date_of_birth; ?>" size="36" />
+								<img id="f_rangeStart_trigger" src="date/src/css/img/calendar.gif" title="Pick a Date" />
+								<img id="f_clearRangeStart" src="date/src/css/img/no.png" title="Clear Date" onClick="return makeEmpty('date_of_birth')" height="16" width="16"  />
+								<script type="text/javascript">
+								  RANGE_CAL_1 = new Calendar({
+										  inputField: "date_of_birth",
+										  dateFormat: "%Y-%m-%d",
+										  trigger: "f_rangeStart_trigger",
+										  bottomBar: true,
+										  onSelect: function() {
+												  var date = Calendar.intToDate(this.selection.get());
+												  LEFT_CAL.args.min = date;
+												  LEFT_CAL.redraw();
+												  this.hide();
+										  }
+								  });
+								  function clearRangeStart() {
+										  document.getElementById("date_of_birth").value = "";
+										  LEFT_CAL.args.min = null;
+										  LEFT_CAL.redraw();
+								  };
+								</script>
