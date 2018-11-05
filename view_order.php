@@ -29,45 +29,45 @@ if($cur_user_group_id == '2'){
 switch($action){
 
 	case 'view':
-		default:
-			$posted = $_REQUEST['posted'];
-			
-			if($posted == "true"){
-				if($cur_user_group_id == '1'){
-					$student_id = $_POST['student_id'];
-				}else{
-					$student_id = $cur_user_id;
-				}
-				
-				$sql = "SELECT hall_id from ".DB_PREFIX."prebooking WHERE user_id = '".$student_id."'";
-				$hallArr = $dbObj->selectDataObj($sql);
-				$hall_id = $hallArr[0]->hall_id;
-				
-				$days = date_difference($start_date, $end_date);
-				
-				$explode = explode('-', $start_date);
-				$start_day = $explode[2];
-				$start_month = $explode[1];
-				$start_year = $explode[0];
-			}
-			
-			if($cur_user_group_id == '1'){
+	default:
+	$posted = $_REQUEST['posted'];
+	
+	if($posted == "true"){
+		if($cur_user_group_id == '1'){
+			$student_id = $_POST['student_id'];
+		}else{
+			$student_id = $cur_user_id;
+		}
+		
+		$sql = "SELECT hall_id from ".DB_PREFIX."prebooking WHERE user_id = '".$student_id."'";
+		$hallArr = $dbObj->selectDataObj($sql);
+		$hall_id = $hallArr[0]->hall_id;
+		
+		$days = date_difference($start_date, $end_date);
+		
+		$explode = explode('-', $start_date);
+		$start_day = $explode[2];
+		$start_month = $explode[1];
+		$start_year = $explode[0];
+	}
+	
+	if($cur_user_group_id == '1'){
 				//Build Student Array
-				$sql = "select u.id, p.registration_no, p.name from ".DB_PREFIX."prebooking as p, ".DB_PREFIX."user as u WHERE u.id = p.user_id order by p.registration_no asc";
-				$studentArr = $dbObj->selectDataObj($sql);
-				
-				$studentId = array();
-				$studentId[0] = SELECT_STUDENT_OPT;
-				if(!empty($studentArr)){			
-					foreach($studentArr as $item){
-						$studentId[$item->id] = $item->registration_no.' &raquo; '.$item->name;
-					}	
-				}			
-				$studentList_opt = formSelectElement($studentId, $student_id, 'student_id');
-			}
+		$sql = "select u.id, p.registration_no, p.name from ".DB_PREFIX."prebooking as p, ".DB_PREFIX."user as u WHERE u.id = p.user_id order by p.registration_no asc";
+		$studentArr = $dbObj->selectDataObj($sql);
+		
+		$studentId = array();
+		$studentId[0] = SELECT_STUDENT_OPT;
+		if(!empty($studentArr)){			
+			foreach($studentArr as $item){
+				$studentId[$item->id] = $item->registration_no.' &raquo; '.$item->name;
+			}	
+		}			
+		$studentList_opt = formSelectElement($studentId, $student_id, 'student_id');
+	}
 
-			$action = 'view';
-		break;
+	$action = 'view';
+	break;
 
 }//switch
 
@@ -88,73 +88,71 @@ require_once("templates/left_menu.php");
 		</tr>
 	</table>
 	<?php if($action=="view"){ ?>
-			
-			<form action="view_order.php" method="post" name="view_order" id="view_order" onsubmit="return checkDate();" >
-				<table width="100%" cellpadding="0" cellspacing="0" border="0" class="module_content">
+		
+		<form action="view_order.php" method="post" name="view_order" id="view_order" onsubmit="return checkDate();" >
+			<table width="100%" cellpadding="0" cellspacing="0" border="0" class="module_content">
 				<?php if($cur_user_group_id == '1'){ ?>
 					<tr>
 						<td height="30"><?php echo SELECT_STUDENT_OPT; ?>:</td>
 						<td colspan="3"><?php echo $studentList_opt; ?>
 					</tr>
 				<?php }//if ?>
-					<tr>
-						<td height="30" width="10%">
-							<?php echo START_DATE; ?>:
-						</td>
-						<td height="30">
-							<input name="start_date" id="start_date" type="text" class="inputbox readonly" readonly="readonly" alt="Start Date" size="18" value="<?php echo $start_date; ?>" />
-							<img id="f_rangeStart_triggerm_start" src="date/src/css/img/calendar.gif" title="Pick a Date" />
-							<img id="f_clearRangeStart" src="date/src/css/img/no.png" title="Clear Date" onClick="return makeEmpty('start_date')" height="16" width="16" />
-							<script type="text/javascript">
+				<tr>
+					<td height="30" width="10%">
+						<?php echo START_DATE; ?>:
+					</td>
+					<td height="30">
+						<input name="start_date" id="start_date" type="text" class="inputbox readonly" readonly="readonly" alt="Start Date" size="18" value="<?php echo $start_date; ?>" />
+						<img id="f_rangeStart_triggerm_start" src="date/src/css/img/calendar.gif" title="Pick a Date" />
+						<img id="f_clearRangeStart" src="date/src/css/img/no.png" title="Clear Date" onClick="return makeEmpty('start_date')" height="16" width="16" />
+						<script type="text/javascript">
 							RANGE_CAL_1 = new Calendar({
 								inputField: "start_date",
 								dateFormat: "%Y-%m-%d",
 								trigger: "f_rangeStart_triggerm_start",
 								bottomBar: true,
 								onSelect: function(){
-								var date = Calendar.intToDate(this.selection.get());
+									var date = Calendar.intToDate(this.selection.get());
 									this.hide();
 								}
 							});
-							</script>
-						</td>
-						<td height="30" width="10%">
-							<?php echo END_DATE; ?>:
-						</td>
-						<td height="30">
-							<input name="end_date" id="end_date" type="text" class="inputbox readonly" readonly="readonly" alt="End Date" size="18" value="<?php echo $end_date; ?>" />
-							<img id="f_rangeStart_triggerm_end" src="date/src/css/img/calendar.gif" title="Pick a Date" />
-							<img id="f_clearRangeStart" src="date/src/css/img/no.png" title="Clear Date" onClick="return makeEmpty('end_date')" height="16" width="16" />
-							<script type="text/javascript">
+						</script>
+					</td>
+					<td height="30" width="10%">
+						<?php echo END_DATE; ?>:
+					</td>
+					<td height="30">
+						<input name="end_date" id="end_date" type="text" class="inputbox readonly" readonly="readonly" alt="End Date" size="18" value="<?php echo $end_date; ?>" />
+						<img id="f_rangeStart_triggerm_end" src="date/src/css/img/calendar.gif" title="Pick a Date" />
+						<img id="f_clearRangeStart" src="date/src/css/img/no.png" title="Clear Date" onClick="return makeEmpty('end_date')" height="16" width="16" />
+						<script type="text/javascript">
 							RANGE_CAL_1 = new Calendar({
 								inputField: "end_date",
 								dateFormat: "%Y-%m-%d",
 								trigger: "f_rangeStart_triggerm_end",
 								bottomBar: true,
 								onSelect: function(){
-								var date = Calendar.intToDate(this.selection.get());
+									var date = Calendar.intToDate(this.selection.get());
 									this.hide();
 								}
 							});
-							</script>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<input type="submit" name="submit" class="button" value="View Order"/>
-						</td>
-					</tr>
-				</table>
-				<input type="hidden" name="action" value="view" />
-				<input type="hidden" name="posted" value="true" />
-			</form>
+						</script>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="submit" name="submit" class="button" value="View Order"/>
+					</td>
+				</tr>
+			</table>
+			<input type="hidden" name="action" value="view" />
+			<input type="hidden" name="posted" value="true" />
+		</form>
+		
+		<?php if($posted == 'true'){ ?>
 			
-	<?php if($posted == 'true'){ ?>
-	
 			<table width="100%" cellpadding="0" cellspacing="0" border="0" class="module_content">
-				<tr>
-					<td><a href="view_order_report.php"><img src="images/excel.png" height="24" width="24" alt="save the report" title="save the report" style="padding-bottom:10px;"/></a><br /></td>
-				<tr>
+				
 				<tr>
 					<td colspan="8">
 						<table width="100%" cellpadding="0" cellspacing="0" border="0" class="datagrid">			
@@ -166,7 +164,7 @@ require_once("templates/left_menu.php");
 								<td width="15%" align="center"><strong><?php echo TOTAL_ORDER; ?></strong></td>					
 							</tr>
 							<?php
-								if($cur_user_group_id == '1'){
+							if($cur_user_group_id == '1'){
 									//For downloading Reports as XLS format
 								$downloadTitle[0] = 'Individual Student Order' ."\n";
 
@@ -175,7 +173,7 @@ require_once("templates/left_menu.php");
 								$arr[0]['lunch'] = 'Lunch';
 								$arr[0]['dinner'] = 'Dinner';
 								$arr[0]['total_order'] = 'Total Order';
-								}
+							}
 							?>
 							
 							<?php
@@ -228,39 +226,39 @@ require_once("templates/left_menu.php");
 									
 									$total_order = $total_breakfast + $total_lunch + $total_dinner;
 									
-							?>
-							<tr <?php echo $class; ?>>
-							
-								<td align="center" height="30"><?php echo $target_date;
-								 $arr[$sl+1]['date'] = $target_date;
-								 ?>
-								 </td>
-								 
-								<td align="center" <?php echo $bf_class;?>>
-								<?php  $arr[$sl+1]['breakfast'] = $breakfast; echo $breakfast; ?>
-								</td>
-								
-								<td align="center"<?php echo $ln_class;  ?>>
-								<?php $arr[$sl+1]['lunch'] = $lunch; echo $lunch; ?>
-								 </td>
-								 
-								<td align="center"<?php echo $dn_class;  ?>>
-								<?php  $arr[$sl+1]['dinner'] = $dinner; echo $dinner?>
-								 </td>
-								 
-								<td align="center"><?php echo $ondate_order; 
-								$arr[$sl+1]['total_order'] = $ondate_order;?>
+									?>
+									<tr <?php echo $class; ?>>
+										
+										<td align="center" height="30"><?php echo $target_date;
+										$arr[$sl+1]['date'] = $target_date;
+										?>
+									</td>
+									
+									<td align="center" <?php echo $bf_class;?>>
+										<?php  $arr[$sl+1]['breakfast'] = $breakfast; echo $breakfast; ?>
+									</td>
+									
+									<td align="center"<?php echo $ln_class;  ?>>
+										<?php $arr[$sl+1]['lunch'] = $lunch; echo $lunch; ?>
+									</td>
+									
+									<td align="center"<?php echo $dn_class;  ?>>
+										<?php  $arr[$sl+1]['dinner'] = $dinner; echo $dinner?>
+									</td>
+									
+									<td align="center"><?php echo $ondate_order; 
+									$arr[$sl+1]['total_order'] = $ondate_order;?>
 								</td>	
 								
 							</tr>
 							<?php 
 							}//for
 							$total_cost = $total_breakfast + $total_lunch + $total_dinner;
-								$arr[$i+1]['date'] = 'Total:';
-								$arr[$i+1]['breakfast'] = $total_breakfast;
-								$arr[$i+1]['lunch'] = $total_lunch;
-								$arr[$i+1]['dinner'] = $total_dinner;
-								$arr[$i+1]['total_order'] = $total_cost;
+							$arr[$i+1]['date'] = 'Total:';
+							$arr[$i+1]['breakfast'] = $total_breakfast;
+							$arr[$i+1]['lunch'] = $total_lunch;
+							$arr[$i+1]['dinner'] = $total_dinner;
+							$arr[$i+1]['total_order'] = $total_cost;
 							?>
 							<tr class="head">
 								<td height="30"><strong><?php echo TOTAL; ?>:</strong></td>
@@ -270,17 +268,17 @@ require_once("templates/left_menu.php");
 								<td align="center"><strong><?php echo $total_cost; ?></strong></td>
 							</tr>
 						<?php }//if ?>
-						</table>
-					</td>
-				</tr>
-			</table>
-	
-	<?php 
+					</table>
+				</td>
+			</tr>
+		</table>
+		
+		<?php 
 		}//if submitted
-	?>
-	<?php
+		?>
+		<?php
 
-	
+		
 		$_SESSION['requisition'] = '';
 		$_SESSION['requisition'][0] = $downloadTitle; 
 		$_SESSION['requisition'][1] = $arr;
@@ -291,7 +289,7 @@ require_once("templates/left_menu.php");
 
 
 </div>
-			
+
 <?php
 require_once("includes/footer.php");
 ?>

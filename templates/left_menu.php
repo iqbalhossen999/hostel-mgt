@@ -58,9 +58,9 @@ if($usr[0]->group_id == '3'){
 				<li <?php if($curr_page == 'hallcharge.php') echo 'class="active_menu"';?>>
 					<a href="hallcharge.php" class="seat" rel="seat"><?php echo HALL_CHARGE; ?></a>
 				</li>
-				 <li <?php if($curr_page == 'guest_meal_mgt.php') echo 'class="active_menu"';?>>
+				 <!-- <li <?php if($curr_page == 'guest_meal_mgt.php') echo 'class="active_menu"';?>>
 					<a href="guest_meal_mgt.php" class="guest_meal_mgt" rel="guest_meal_mgt"><?php echo GUEST_MEAL_MANAGEMENT; ?></a>
-				</li>
+				</li> -->
 				<li <?php if($curr_page == 'time_setup.php') echo 'class="active_menu"';?>>
 					<a href="time_setup.php" class="time_setup" rel="time_setup"><?php echo MEAL_BOOKING_TIME; ?></a>
 				</li>
@@ -103,7 +103,7 @@ if($usr[0]->group_id == '3'){
 			</ul>
 		</li>
 		
-		<li <?php if(($curr_page == 'meal_order_view.php') || ($curr_page == 'view_order.php') || ($curr_page == 'individual_date_wise.php') || ($curr_page == 'date_wise_order.php')
+		<!-- <li <?php if(($curr_page == 'meal_order_view.php') || ($curr_page == 'view_order.php') || ($curr_page == 'individual_date_wise.php') || ($curr_page == 'date_wise_order.php')
 				 || ($curr_page == 'date_wise.php') || ($curr_page == 'stock_rep.php') || ($curr_page == 'item_stock_rep.php') || ($curr_page == 'consump_rep.php') || ($curr_page == 'item_consump_rep.php') || ($curr_page == 'aval_rep.php') || ($curr_page == 'student_mess_report.php') || ($curr_page == 'report.php')) echo 'class="active_menu"';?>>
 			<a href="#" class="course" rel="course"><?php echo REPORTS; ?></a>
 			<ul>
@@ -144,7 +144,7 @@ if($usr[0]->group_id == '3'){
 					<a href="report.php" class="report" rel="report"><?php echo STUDENT_MONTHLY_REPORT; ?></a>
 				</li>
 			</ul>
-		</li>
+		</li> -->
 		<?php }else if($usr[0]->group_id == '3'){ ?>
 		<li <?php if($curr_page == 'form.php') echo 'class="active_menu"';?>>
 			<a href="<?php echo $add_cond;?>" class="form" rel="form"><?php echo ADMISSION_FORM; ?></a>

@@ -37,9 +37,9 @@ require_once("includes/template2.php");
 						<tr>
 							<td height="70">
 								<?php 
-									if($_POST['login_submitted']){
-										echo '<span id="invalid_login">'.INVALID_USERNAME_PASSWORD.'</span>';
-									}
+								if($_POST['login_submitted']){
+									echo '<span id="invalid_login">'.INVALID_USERNAME_PASSWORD.'</span>';
+								}
 								?>
 							</td>			
 						</tr>
@@ -65,7 +65,7 @@ require_once("includes/template2.php");
 							<td height="30">
 								<!--<input type="checkbox" class="forgot" /> -->
 								<div id="log_img"><img src="images/bulet_forgot.gif" border="0" /></div>
-								<span class="for_click"><?php echo FORGOT_PASSWORD; ?>? <a href="passforgot.php" title="click"><?php echo CLICK_HERE; ?></a></span>
+								<span class="for_click"><?php echo FORGOT_PASSWORD; ?>?</span>
 							</td>
 						</tr>
 						<tr>
@@ -80,7 +80,7 @@ require_once("includes/template2.php");
 		<input type="hidden" name="login_submitted" value="1" />
 	</form>
 </div>
-			
+
 <?php
 require_once("includes/footer.php");
 ?>
